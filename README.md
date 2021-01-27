@@ -6,4 +6,4 @@ you're using [cypress & gherkin](https://github.com/TheBrainFamily/cypress-cucum
 export OUTDIR=theDirectoryYouWantTheStuffWrittenTo; node index.js $pathToGherkinAsPlaintext
 ```
 
-it'll create a folder called `$theDirectoryYouWantTheStuffWrittenTo/$fileName` and a file called `$fileName.feature`
+it'll create a folder called `$theDirectoryYouWantTheStuffWrittenTo/$fileName` a file called `$theDirectoryYouWantTheStuffWrittenTo/$fileName.feature`, and a file called `$theDirectoryYouWantTheStuffWrittenTo/steps.js`.
