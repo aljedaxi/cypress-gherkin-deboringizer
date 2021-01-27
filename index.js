@@ -71,7 +71,7 @@ const parseStrings = s => {
 	const args = map (camelCase) (strings);
 	return {remainingDescription, args};
 };
-const isSingleCap = s => (s.length === 1) && (s.toUpperCase() === s);
+const isSingleCap = s => (s.length === 1) && (s.toUpperCase() === s) && (s.toLowerCase() !== s);
 const parseWords =
 	reduce (
 		({description = [], args = []}) => x =>
