@@ -137,9 +137,19 @@ const turnIntoPrettyFunctions = pipe([
 	joinWith ('\n\n'), 
 ]);
 
+const uniqBy = f => pipe([
+	reduce (({a = [], alreadyIn = new Set()}) => x => 
+		alreadyIn.has(f(x)) 
+			? {a, alreadyIn} 
+			: {a: [...a, x], alreadyIn: alreadyIn.add(f(x))},
+	) ({}),
+	prop ('a'),
+]);
+
 const gherkinToSteps = pipe([
 	preprocess,
 	getSteps,
+	uniqBy (prop ('description')),
 	turnAndsIntoWhatevers,
 	turnIntoPrettyFunctions,
 ]);
